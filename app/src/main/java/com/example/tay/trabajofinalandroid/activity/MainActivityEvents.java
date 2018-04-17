@@ -24,17 +24,19 @@ public class MainActivityEvents implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-       /* if (view.getId() == R.id.btnLogOut) {
-            AuthUI.getInstance()
+       if (view.getId() == R.id.btnLogOut) {
+           AuthUI.getInstance()
                     .signOut(mainActivity)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        public void onComplete(@NonNull Task<Void> task) {
-                            // user is now signed out
-                            //startActivity(new Intent(MainActivity, SignInActivity.class));
-                            //finish();
+                       public void onComplete(@NonNull Task<Void> task) {
+                            //user is now signed out
+                           // startActivity(new Intent(MainActivity, SignInActivity.class));
+                           // finish();
                         }
                     });
         }
-    */
-    }
-}
+
+ }
+       }
+
+

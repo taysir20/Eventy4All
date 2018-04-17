@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity
                         .build(),
                 RC_SIGN_IN);
         loginActivityEvents = new MainActivityEvents(this);
-       // btnLogout = findViewById(R.id.btnLogOut);
-//        btnLogout.setOnClickListener(loginActivityEvents);
+        btnLogout = findViewById(R.id.btnLogOut);
+       btnLogout.setOnClickListener(loginActivityEvents);
     }
 
     @Override
@@ -132,35 +132,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
-        if (requestCode == RC_SIGN_IN) {
-            IdpResponse response = IdpResponse.fromResultIntent(data);
 
-            // Successfully signed in
-            if (resultCode == RESULT_OK) {
-                // startActivity(SignedInActivity.createIntent(this, response));
-                //finish();
-                return;
-            } else {
-                // Sign in failed
-
-
-                if (response.getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    // showSnackbar(R.string.no_internet_connection);
-                    return;
-                }
-
-                if (response.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
-                    //showSnackbar(R.string.unknown_error);
-                    return;
-                }
-            }
-
-            //showSnackbar(R.string.unknown_sign_in_response);
-        }
-    }
 
     public MainActivityEvents getLoginActivityEvents() {
         return loginActivityEvents;
